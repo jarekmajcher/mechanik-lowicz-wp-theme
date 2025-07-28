@@ -34,44 +34,35 @@ class LocationsMap {
       fullscreenControl: false,
       styles: [
         {
-          "featureType": "all",
+          "featureType": "landscape",
           "elementType": "all",
           "stylers": [
             {
-              "color": "#fdfdfd"
+              "visibility": "on"
             }
           ]
         },
         {
-          "featureType": "all",
-          "elementType": "geometry",
+          "featureType": "poi.business",
+          "elementType": "all",
           "stylers": [
             {
-              "color": "#fdfdfd"
+              "visibility": "simplified"
             }
           ]
         },
         {
-          "featureType": "all",
+          "featureType": "poi.business",
           "elementType": "labels",
           "stylers": [
             {
-              "color": "#fdfdfd"
+              "visibility": "simplified"
             }
           ]
         },
         {
-          "featureType": "all",
-          "elementType": "labels.text.fill",
-          "stylers": [
-            {
-              "color": "#716558"
-            }
-          ]
-        },
-        {
-          "featureType": "all",
-          "elementType": "labels.icon",
+          "featureType": "poi.park",
+          "elementType": "all",
           "stylers": [
             {
               "visibility": "off"
@@ -79,38 +70,35 @@ class LocationsMap {
           ]
         },
         {
-          "featureType": "poi.park",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "lightness": 20
-            }
-          ]
-        },
-        {
-          "featureType": "road",
-          "elementType": "geometry",
-          "stylers": [
-            {
-              "lightness": -5
-            },
-          ]
-        },
-        {
-          "featureType": "road",
-          "elementType": "geometry.stroke",
-          "stylers": [
-            {
-              "lightness": 25
-            }
-          ]
-        },
-        {
-          "featureType": "water",
+          "featureType": "poi.school",
           "elementType": "all",
           "stylers": [
             {
-              "color": "#9eb6d5"
+              "visibility": "on"
+            }
+          ]
+        },
+        {
+          "featureType": "poi.sports_complex",
+          "elementType": "all",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "transit.station.bus",
+          "elementType": "all",
+          "stylers": [
+            {
+              "visibility": "on"
+            },
+            {
+              "saturation": "21"
+            },
+            {
+              "weight": "4.05"
             }
           ]
         }
