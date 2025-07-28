@@ -1,0 +1,15 @@
+{% import '@rwd/macros/helper.twig' as helper_macro %}
+
+<div class="gMasonry gMasonry--{% if fields.gutter %}gutter{% else %}simple{% endif %} {{ block.className }}">
+    {% for image in fields.images %}
+        {% set imageInfo = fn('wp_get_attachment_image_src', image.id, 'full') %}
+        {% set imageOrientation = imageInfo.1 > imageInfo.2 ? 'landscape' : 'portrait' %}
+        <div class="gMasonry__item gMasonry__item--{{ imageOrientation}} gMasonry__item--{{ fields.ratio }} gMasonry__item--{% if fields.gutter %}gutter{% else %}simple{% endif %}{{ fields.size }}">
+            <a href="{{ image.sizes.large }}" class="gMasonry__link">
+                {{ wp_get_attachment_image(image.id, 'medium', { class: 'gMasonry__img' }) }}
+            </a>
+        </div>
+    {% endfor %}
+
+    <div class="gMasonry__sizer gMasonry__sizer--{% if fields.gutter %}gutter{% else %}simple{% endif %}{{ fields.size }}"></div>
+</div>

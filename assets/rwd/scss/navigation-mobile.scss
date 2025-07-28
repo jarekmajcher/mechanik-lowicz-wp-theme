@@ -1,0 +1,63 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+// Fix fucnking mmenu
+body:not(.mm-wrapper--opened) .mm-slideout {
+    transform: unset !important;
+}
+
+.mobileNav {
+    --mm-color-border: transparent;
+    --mm-color-background: #{var.$colorWhite};
+    --mm-color-icon: #{var.$colorBlack};
+
+    padding-top: 20px;
+
+    &:not(.mm-menu) {
+        display: none;
+    }
+
+    // Mmenu elements
+    .mm-navbars--top {
+    }
+    .mm-navbar {
+        margin-bottom: 20px;
+    }
+    .mm-btn--next::after, .mm-btn--prev::before {
+        width: 12px;
+        height: 12px;
+        border-width: 1px;
+    }
+    .mm-btn--close::before {
+        font-size: 64px;
+    }
+
+    // Standard menu elements
+    &__item {
+        &--0 {
+            > a {
+                font-size: 1.4em;
+                font-weight: 200;
+            }
+
+        }
+        &--1 {
+            > a {
+                font-size: 1.1em;
+                font-weight: 200;
+            }
+        }
+    }
+
+    &__logoWrapper {
+        padding-left: 50px;
+    }
+    &__logo {
+        width: 60px;
+        height: auto;
+
+        display: inline-block;
+    }
+}
+

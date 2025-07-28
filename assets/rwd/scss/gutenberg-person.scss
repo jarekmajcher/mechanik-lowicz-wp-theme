@@ -1,0 +1,68 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+.gPerson {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var.$colorMono1;
+    padding: 20px;
+    @include mx.S {
+    }
+    @include mx.M {
+    }
+    @include mx.L {
+        padding: 60px;
+    }
+    &__imgWrapper {
+        @include mx.S {
+            width: 100%;
+            margin-bottom: 40px;
+        }
+        @include mx.M {
+            width: 250px;
+        }
+        @include mx.L {
+            width: 250px;
+        }
+    }
+    &__img {
+        width: 250px;
+        height: auto;
+        border-radius: 50%;
+    }
+    &__text {
+        @include mx.S {
+            width: 100%;
+        }
+        @include mx.M {
+            width: calc(100% - 250px);
+            padding-left: var(--column-gap);
+        }
+        @include mx.L {
+            width: calc(100% - 250px);
+            padding-left: var(--column-gap);
+        }
+    }
+    &__name {
+        margin-bottom: 0.5em;
+        font-size: 3em;
+        font-style: italic;
+        font-weight: 700;
+    }
+    &__content {
+    }
+    &__linkedin {
+        margin-top: 2em;
+        i {
+            font-size: 1.6em;
+            margin-right: 5px;
+            color: #0A66C2;
+            vertical-align: middle;
+        }
+        span {
+            vertical-align: middle;
+            font-weight: 700;
+        }
+    }
+}

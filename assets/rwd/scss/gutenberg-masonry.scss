@@ -1,0 +1,138 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+.gMasonry {
+    margin: 0 10px;
+    overflow: hidden;
+    @include mx.S {
+        padding: 0 !important;
+    }
+    @include mx.M {
+        padding: 0 !important;
+    }
+    @include mx.L {
+    }
+    &__item,
+    &__sizer {
+        line-height: 0;
+        width: calc(50% - 5px);
+        &--gutter1 {
+            margin-bottom: 10px;
+            @include mx.S {
+                width: calc(50% - 5px);
+            }
+            @include mx.M {
+                width: calc(25% - 7.5px);
+            }
+            @include mx.L {
+                width: calc(25% - 7.5px);
+            }
+        }
+        &--gutter2 {
+            margin-bottom: 10px;
+            @include mx.S {
+                width: calc(50% - 5px);
+            }
+            @include mx.M {
+                width: calc(20% - 8px);
+            }
+            @include mx.L {
+                width: calc(20% - 8px);
+            }
+        }
+        &--simple1 {
+            @include mx.S {
+                width: 50%;
+            }
+            @include mx.M {
+                width: 25%
+            }
+            @include mx.L {
+                width: 25%
+            }
+        }
+        &--simple2 {
+            @include mx.S {
+                width: 50%;
+            }
+            @include mx.M {
+                width: 20%;
+            }
+            @include mx.L {
+                width: 20%;
+            }
+        }
+        &--original {
+        }
+        &--square {
+            .gMasonry__link {
+                aspect-ratio : 1 / 1;
+            }
+            .gMasonry__img {
+                position: absolute;
+                object-fit: cover;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 100% !important;
+            }
+        }
+        &--2to3 {
+            &.gMasonry__item--portrait.gMasonry__item--gutter1,
+            &.gMasonry__item--portrait.gMasonry__item--gutter2 {
+                .gMasonry__link {
+                    padding-bottom: 132%;
+                }
+            }
+            &.gMasonry__item--portrait.gMasonry__item--simple1,
+            &.gMasonry__item--portrait.gMasonry__item--simple2 {
+                .gMasonry__link {
+                    padding-bottom: 132%;
+                }
+            }
+            &.gMasonry__item--landscape.gMasonry__item--gutter1,
+            &.gMasonry__item--landscape.gMasonry__item--gutter2 {
+                .gMasonry__link {
+                    padding-bottom: calc(66% - 4.99px);
+                }
+            }
+            &.gMasonry__item--landscape.gMasonry__item--simple1,
+            &.gMasonry__item--landscape.gMasonry__item--simple2 {
+                .gMasonry__link {
+                    padding-bottom: 66%;
+                }
+            }
+            .gMasonry__img {
+                position: absolute;
+                object-fit: cover;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 100% !important;
+            }
+        }
+    }
+    &__link {
+        display: block;
+        width: 100%;
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.container {
+    .gMasonry {
+        @include mx.S {
+            margin: 0 0;
+        }
+        @include mx.M {
+            margin: 0 0;
+        }
+        @include mx.L {
+            margin: 0 auto;
+        }
+    }
+}

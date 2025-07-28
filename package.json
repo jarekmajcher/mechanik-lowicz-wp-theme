@@ -1,0 +1,35 @@
+{
+    "name": "jm",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "jaroslawmajcher <jarek@majcher.me>",
+    "license": "MIT",
+    "devDependencies": {
+        "@symfony/webpack-encore": "^5.0",
+        "autoprefixer": "^10.4",
+        "fast-glob": "^3.3.3",
+        "file-loader": "^6.2",
+        "postcss": "^8.5",
+        "postcss-loader": "^8.1",
+        "sass": "^1.84",
+        "sass-loader": "^16.0",
+        "svg-spritemap-webpack-plugin": "4.*",
+        "webpack-notifier": "^1.15.0"
+    },
+    "dependencies": {
+        "@googlemaps/markerclusterer": "^2.5.3",
+        "bootstrap-icons": "^1.13.1",
+        "glightbox": "^3.3",
+        "imagesloaded": "^5.0",
+        "masonry-layout": "^4.2",
+        "mburger-webcomponent": "^3.1",
+        "micromodal": "^0.4",
+        "mmenu-js": "^9.3",
+        "swiper": "^11.2"
+    },
+    "scripts": {
+        "dev": "encore dev",
+        "prod": "encore production",
+        "watch": "encore dev --watch"
+    }
+}

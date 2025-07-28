@@ -1,0 +1,66 @@
+{% import '@rwd/macros/menu.twig' as menu_macro %}
+{% import '@rwd/macros/helper.twig' as helper_macro %}
+{% import '@rwd/macros/post.twig' as post_macro %}
+
+{% include '@rwd/partials/header.twig' %}
+
+<div id="mobile_nav" class="mobileNav">
+    {{ menu_macro.element(menu.mobile_navigation.items, 'mobileNav', post.type.slug) }}
+</div>
+
+<div class="wrapper">
+
+    {#
+    <header class="header" id="header-top">
+        <div class="header__container container">
+            <div class="header__logo headerLogo">
+                <a class="headerLogo__link" href="{{ site.url }}">
+                    <img class="headerLogo__img" src="{{ asset('images/logo/mechanik-lowicz-color.svg') }}" alt="{{ site.name }}" />
+                </a>
+            </div>
+
+            <nav class="header__nav headerNav" id="headerNav">
+                {{ menu_macro.element(menu.header_navigation.items, 'headerNav', post.type.slug) }}
+            </nav>
+
+            <div class="header__mmburger headerMmburger">
+                <mm-burger menu="mobile_nav" fx="spin"></mm-burger>
+            </div>
+        </div>
+    </header>
+    #}
+
+    <div class="pageContent">
+        {% block body %}{% endblock %}
+    </div>
+
+    <footer class="footer">
+        <div class="footer__container footer__container--1 container">
+            <div class="footer__nav">
+                {{ menu_macro.element(menu.footer_navigation.items, 'footerNav', post.type.slug) }}
+            </div>
+        </div>
+        <div class="footer__container footer__container--2 container">
+            <div class="footer__info1">
+                {{ sidebar.footer_info_1|shortcodes }}
+            </div>
+            <div class="footer__info2">
+                {{ sidebar.footer_info_2|shortcodes }}
+            </div>
+        </div>
+    </footer>
+
+    {% if not COOKIE_ACCEPT %}
+        <aside class="cookie">
+            <div class="cookie__wrapper">
+                <p class="cookie__info">{{ __('Wykorzystujemy pliki cookies do prawidłowego działania strony, aby analizować ruch na stronie i prowadzić działania marketingowe. Szczegóły znajdziesz w <a href="/polityka-prywatnosci" target="_blank">polityce prywatności</a>. Czy zgadzasz się na wykorzystywanie plików cookies?', 'mechanik-lowicz') }}</p>
+                <p class="cookie__buttons">
+                    <a class="cookie__button cookie__button--accept">{{ __('Tak, zgadzam się', 'mechanik-lowicz') }}</a>
+                    <a href="https://google.com" class="cookie__button cookie__button--reject">{{ __('Nie zgadzam się (opuść stronę)', 'mechanik-lowicz') }}</a>
+                </p>
+            </div>
+        </aside>
+    {% endif %}
+</div>
+
+{% include '@rwd/partials/footer.twig' %}

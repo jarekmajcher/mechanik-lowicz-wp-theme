@@ -1,0 +1,5 @@
+<div class="sBackToParentPage">
+    {% if parent %}
+        <a href="{{ parent.link }}" class="sBackToParentPage__link"><i class="fa-solid fa-arrow-left-long"></i>&nbsp;{{ parent.post_title }}</a>
+    {% endif %}
+</div>

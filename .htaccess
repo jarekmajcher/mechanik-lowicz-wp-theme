@@ -1,0 +1,3 @@
+Options -Indexes
+
+RewriteRule !^(public|style.css) - [F,NC]

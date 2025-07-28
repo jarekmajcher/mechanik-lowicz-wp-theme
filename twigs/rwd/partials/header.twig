@@ -1,0 +1,47 @@
+{% import '@rwd/macros/helper.twig' as helper_macro %}
+
+<!DOCTYPE html>
+<html lang="{{ ICL_LANGUAGE_CODE }}" class="html">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    {{ helper_macro.favicon(theme.link ~ '/public/rwd/favicons') }}
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        window.year = "{{ date|date('Y') }}";
+        window.images = {
+          'logo-color': '{{ asset('images/logo/mechanik-lowicz-color.svg') }}',
+          'logo-white': '{{ asset('images/logo/mechanik-lowicz-white.svg') }}',
+          'logo-black': '{{ asset('images/logo/mechanik-lowicz-black.svg') }}'
+        };
+        window.social = {
+        {% for k, v in options.social %}
+          '{{ k }}': '{{ v }}',
+        {% endfor %}
+        };
+      });
+    </script>
+
+    {% if not WP_DEBUG %}
+    {% endif %}
+
+    {{ function('wp_head') }}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>{{ function('wp_title') }}</title>
+</head>
+
+<body class="body {{ body_class }}">
+    {% if not WP_DEBUG %}
+    {% endif %}
+
+    <div class="iconsprite">
+        {% include '@rwd/icons/sprite.svg' ignore missing %}
+    </div>

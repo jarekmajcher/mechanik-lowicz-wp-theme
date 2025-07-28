@@ -1,0 +1,51 @@
+{# v 1.6.0 #}
+
+{% macro classes(item, d, menuName, itemName, postType) %}
+    {% set classes = item.classes|join(' ') ~ (' --' ~ d) %}
+    {% if not fn('is_404') %}
+        {% set classes = item.current ? (classes ~ ' --current') : classes %}
+        {% set classes = item.current_item_parent ? (classes ~ ' --currentParent') : classes %}
+        {% set classes = postType == 'post' and item.custom._menu_item_object_id == fn('get_option', 'page_for_posts') ? (classes ~ ' --currentParent') : classes %}
+        {% set classes = 'current-page-ancestor' in item.class ? (classes ~ ' --currentAncestor') : classes %}
+        {% set classes = item.children ? (classes ~ ' --hasChildren') : classes %}
+        {% set classes = item.custom._menu_item_type == 'post_type_archive' and item.object == postType ? (classes ~ ' --currentType') : classes %}
+
+        {# Media #}
+        {% set classes = item.id == 5284 and postType in ['post', 'podcast', 'press'] ? (classes ~ ' --currentParent') : classes %}
+    {% endif %}
+
+    {{ (menuName ~ '__' ~ itemName)|prepare_class(classes) }}
+{% endmacro %}
+
+{% macro element(items, name, postType, d) %}
+
+    {% set d = d|default(0) %}
+
+    <ul class="{{ name }}__items {{ name }}__items--{{ d }}">
+        {% for item in items %}
+            {% if '--inactive' not in item.classes %}
+                <li class="{{ _self.classes(item, d, name, 'item', postType) }}">
+                    {% if item.link == '#' %}
+                        <span class="{{ _self.classes(item, d, name, 'link', postType) }}">
+                            {{ item.title|shortcodes }}
+                        </span>
+                    {% else %}
+                        {% if item.link == '#options_contact_email' %}
+                            {% set link = 'mailto:[options field=contact_email]'|shortcodes  %}
+                        {% elseif item.link == '#options_contact_telephone' %}
+                            {% set link = 'tel:[options field=contact_telephone]'|shortcodes %}
+                        {% else %}
+                            {% set link = item.link %}
+                        {% endif %}
+                        <a class="{{ _self.classes(item, d, name, 'link', postType) }}" href="{{ link }}"{% if item.target %} target="{{ item.target }}"{% endif %}>
+                            {{ item.title|shortcodes }}
+                        </a>
+                    {% endif %}
+                    {% if item.children %}
+                        {{ _self.element(item.children, name, postType, d + 1) }}
+                    {%  endif %}
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+{% endmacro %}

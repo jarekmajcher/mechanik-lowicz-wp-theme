@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100px" height="100px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-110,0)">
+        <g id="youtube" transform="matrix(1,0,0,1,-40,0)">
+            <rect x="150" y="0" width="100" height="100" style="fill:none;"/>
+            <g transform="matrix(1,0,0,1,40,0)">
+                <path d="M207.909,25.93C206.757,21.625 203.373,18.242 199.068,17.089C191.273,14.998 160,14.998 160,14.998C160,14.998 128.727,14.998 120.932,17.089C116.627,18.242 113.243,21.625 112.091,25.93C110,33.726 110,50 110,50C110,50 110,66.274 112.091,74.07C113.243,78.375 116.627,81.758 120.932,82.911C128.727,85.002 160,85.002 160,85.002C160,85.002 191.273,85.002 199.068,82.911C203.373,81.758 206.757,78.375 207.909,74.07C210,66.274 210,50 210,50C210,50 209.992,33.726 207.909,25.93ZM149.99,65L175.97,50.001L149.99,35.003L149.99,65Z"/>
+            </g>
+        </g>
+    </g>
+</svg>

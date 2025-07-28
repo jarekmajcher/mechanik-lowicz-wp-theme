@@ -1,0 +1,27 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+$colors:
+        (main, var.$colorMain),
+        (second, var.$colorSecond),
+        (mono-1, var.$colorMono1),
+        (mono-2, var.$colorMono2),
+        (mono-3, var.$colorMono3),
+        (black, var.$colorBlack),
+        (white, var.$colorWhite);
+
+@each $name, $color in $colors {
+    #{'.has-' + $name + '-color'} {
+        color: $color;
+    }
+
+    #{'.has-' + $name + '-background-color'} {
+        background-color: $color;
+    }
+
+    #{'.has-' + $name + '-border-color'} {
+        padding: 30px;
+        border: 1px solid $color;
+    }
+}

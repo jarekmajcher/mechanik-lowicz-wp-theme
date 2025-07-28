@@ -1,0 +1,9 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+.gMap {
+    width: 100%;
+    height: 600px;
+    border-top: 2px solid var.$colorMono1;
+}

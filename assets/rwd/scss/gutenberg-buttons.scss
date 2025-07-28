@@ -1,0 +1,140 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+.gButtons {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 400;
+    @include mx.S {
+        flex-direction: column;
+    }
+    @include mx.M {
+        width: 100%;
+    }
+    @include mx.L {
+        width: 100%;
+    }
+    &--left {
+        justify-content: flex-start;
+    }
+    &--right {
+        justify-content: flex-end;
+    }
+    &--center {
+        justify-content: center;
+    }
+    &--spaceBetween {
+        justify-content: space-between;
+    }
+    &__item {
+        @include mx.S {
+            margin: 10px 0;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        @include mx.M {
+            margin: 10px 10px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        @include mx.L {
+            margin: 10px 10px;
+            &:first-child {
+                margin-left: 0;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &__button {
+        display: inline-block;
+        color: var.$colorBlack;
+        cursor: pointer;
+        i {
+            position: relative;
+            display: inline-block;
+            margin-top: -2px;
+            font-size: 1.2em;
+            vertical-align: middle;
+            &:first-child {
+                margin-right: 5px;
+            }
+            &:last-child {
+                margin-left: 5px;
+            }
+        }
+        &--simple {
+            &.gButtons__button--main {
+                color: var.$colorMain;
+            }
+            &.gButtons__button--second {
+                color: var.$colorMain;
+            }
+        }
+
+        &--solid {
+            padding: 12px 24px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            &.gButtons__button--main {
+                border-color: var.$colorMain;
+                background-color: var.$colorMain;
+                color: var.$colorWhite;
+            }
+            &.gButtons__button--second {
+                border-color: var.$colorSecond;
+                background-color: var.$colorSecond;
+                color: var.$colorWhite;
+            }
+            &.gButtons__button--white {
+                border-color: var.$colorWhite;
+                background-color: var.$colorWhite;
+                color: var.$colorBlack;
+            }
+            &.gButtons__button--black {
+                border-color: var.$colorBlack;
+                background-color: var.$colorBlack;
+                color: var.$colorWhite;
+            }
+        }
+
+        &--border {
+            padding: 12px 24px;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            &.gButtons__button--main {
+                border-color: var.$colorMain;
+                background-color: transparent;
+                color: var.$colorMain;
+            }
+            &.gButtons__button--second {
+                border-color: var.$colorSecond;
+                background-color: transparent;
+                color: var.$colorSecond;
+            }
+            &.gButtons__button--white {
+                border-color: var.$colorWhite;
+                background-color: transparent;
+                color: var.$colorWhite;
+            }
+            &.gButtons__button--black {
+                border-color: var.$colorBlack;
+                background-color: transparent;
+                color: var.$colorBlack;
+            }
+        }
+    }
+}

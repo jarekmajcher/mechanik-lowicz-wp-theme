@@ -1,0 +1,16 @@
+{
+    "name": "acf/person",
+    "title": "Osoba",
+    "description": "Osoba",
+    "style": [ "" ],
+    "category": "formatting",
+    "icon": "images-alt",
+    "keywords": ["person"],
+    "supports": {
+        "align": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "acf-block.php"
+    }
+}

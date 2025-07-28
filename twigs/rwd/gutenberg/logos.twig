@@ -1,0 +1,33 @@
+{% if fields.style == 1 %}
+    <div class="gLogos1 {{ block.className }}">
+        <div class="gLogos1__carousel">
+            <div class="gLogos1__wrapper swiper-wrapper">
+                <div class="gLogos1__slide swiper-slide">
+                    {% for image in fields.items %}
+                    <div class="gLogos1__imgWrapper">
+                        {{ wp_get_attachment_image(image.id, 'full', { class: 'gLogos1__img' }) }}
+                    </div>
+                    {% if loop.index % 2 == 0 and loop.index < fields.items|length %}
+                </div>
+                <div class="gLogos1__slide swiper-slide">
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+{% endif %}
+
+{% if fields.style == 2 %}
+    <div class="gLogos2 {{ block.className }}">
+        <div class="gLogos2__wrapper gLogos2__wrapper--{{ fields.items|length > 1 ? 'multiple' : 'one' }}">
+            {% for image in fields.items %}
+                <div class="gLogos2__imgWrapper">
+                    {{ wp_get_attachment_image(image.id, 'full', { class: 'gLogos2__img' }) }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

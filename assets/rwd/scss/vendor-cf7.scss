@@ -1,0 +1,149 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+.wpcf7 {
+    .wpcf7-form {
+        p {
+            margin-bottom: 1em;
+        }
+        label {
+            display: block;
+            cursor: pointer;
+            color: var.$colorBlack;
+            width: 100%;
+        }
+
+        .wpcf7-form-control-wrap {
+            display: block;
+            width: 100%;
+            margin-top: 0.5em;
+        }
+
+        .wpcf7-form-control.wpcf7-text,
+        .wpcf7-form-control.wpcf7-textarea {
+            display: inline-block;
+            width: 100%;
+            color: var.$colorBlack;
+            background-color: var.$colorWhite;
+            border: 0.1em solid var.$colorSecond;
+            padding: 12px 15px;
+            font-size: var.$fontSize;
+            appearance: none;
+            border-radius: 12px;
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .wpcf7-not-valid-tip {
+            margin-top: 0.5em;
+            font-size: 0.8em;
+            color: var.$colorError;
+        }
+
+        .wpcf7-form-control.wpcf7-acceptance {
+            .wpcf7-list-item {
+                margin-left: 0;
+                label {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    .wpcf7-list-item-label {
+                        margin-left: 1em;
+                        font-size: 0.8em;
+                        span {
+                            display: block;
+                            width: 100%;
+                            margin-bottom: 0.2em;
+                        }
+                        a {
+                            text-decoration: underline !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        input[type="checkbox"] {
+            color: var.$colorSecond;
+            cursor: pointer;
+            appearance: none;
+            margin: 0;
+            font: inherit;
+            width: 1.4em;
+            height: 1.4em;
+            border: 0.1em solid currentColor;
+            border-radius: 0;
+            transform: translateY(0.075em);
+            display: grid;
+            place-content: center;
+            &::before {
+                content: "";
+                width: 1.4em;
+                height: 1.4em;
+                border-radius: 0;
+                transform: scale(0);
+                transition: 120ms transform ease-in-out;
+                background-color: currentColor;
+            }
+            &:checked::before {
+                transform: scale(1);
+            }
+        }
+
+        .wpcf7-form-control.wpcf7-submit {
+            display: inline-block;
+            margin-top: 1em;
+            padding: 0.8em 4em;
+            border: 0.1em solid var.$colorSecond;
+            color: var.$colorWhite;
+            background-color: var.$colorSecond;
+            text-decoration: none;
+            text-align: center;
+            will-change: color, background-color;
+            transition: color 0.3s, background-color 0.3s;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 12px;
+            font-size: var.$fontSize;
+            &:hover:not(:disabled) {
+                color: var.$colorSecond;
+                background-color: var.$colorWhite;
+            }
+            &:disabled {
+                cursor: not-allowed !important;
+                opacity: 0.5;
+                filter: grayscale(1);
+            }
+        }
+
+        .wpcf7-response-output {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 1em 2em !important;
+            border-radius: 0;
+            border-width: 0.1em;
+        }
+
+        &.sent {
+            .wpcf7-response-output {
+                background-color: var.$colorWhite;
+                border-color: var.$colorSuccess;
+                color: var.$colorSuccess;
+            }
+        }
+
+        &.invalid {
+            .wpcf7-response-output {
+                background-color: var.$colorWhite;
+                border-color: var.$colorError;
+                color: var.$colorError;
+            }
+        }
+
+        .wpcf7-spinner {
+            vertical-align: middle;
+        }
+    }
+}
+

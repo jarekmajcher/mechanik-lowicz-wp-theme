@@ -1,0 +1,301 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+@use 'sass:map';
+
+/**
+ * MAIN
+ */
+:root {
+    @include mx.S {
+        --column-gap: #{map.get(var.$column-gap-map, S)};
+        --row-gap: #{map.get(var.$row-gap-map, S)};
+    }
+    @include mx.M {
+        --column-gap: #{map.get(var.$column-gap-map, M)};
+        --row-gap: #{map.get(var.$row-gap-map, M)};
+    }
+    @include mx.L {
+        --column-gap: #{map.get(var.$column-gap-map, L)};
+        --row-gap: #{map.get(var.$row-gap-map, L)};
+    }
+    @include mx.XL {
+        --column-gap: #{map.get(var.$column-gap-map, XL)};
+        --row-gap: #{map.get(var.$row-gap-map, XL)};
+    }
+}
+.wrapper {
+    background-color: var.$colorWhite;
+    min-height: 100%;
+    overflow: hidden;
+}
+.body {
+    font-family: var.$fontFamily;
+    font-size: var.$fontSize;
+}
+
+/**
+ * TOP
+ */
+.top {
+    position: relative;
+}
+
+/**
+ * Header
+ */
+.header {
+    width: 100%;
+    background-color: var.$colorWhite;
+    transition: all 0.4s ease;
+    @include mx.S {
+        padding: 20px 0;
+    }
+    @include mx.M {
+        padding: 20px 0;
+    }
+    @include mx.L {
+    }
+    &__container {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    }
+    &__logo {
+        position: relative;
+        z-index: 999;
+        padding: 5px 0;
+        @include mx.S {
+            width: 140px;
+            margin-right: auto;
+        }
+        @include mx.M {
+            width: 180px;
+            margin-right: auto;
+        }
+        @include mx.L {
+            width: 200px;
+        }
+    }
+    &__nav {
+        position: relative;
+        z-index: 999;
+        @include mx.S {
+            display: none;
+        }
+        @include mx.M {
+            display: none;
+        }
+        @include mx.L {
+
+        }
+    }
+    &__mmburger {
+        position: relative;
+        z-index: 999;
+        @include mx.S {
+            margin-left: 15px;
+        }
+        @include mx.M {
+            margin-left: 30px;
+        }
+        @include mx.L {
+            display: none;
+        }
+    }
+
+}
+.headerLogo {
+    line-height: 0;
+    &__link {
+        line-height: 0;
+    }
+    &__img {
+        height: auto;
+        @include mx.S {
+            width: 140px;
+        }
+        @include mx.M {
+            width: 180px;
+        }
+        @include mx.L {
+            width: 200px;
+        }
+    }
+}
+.headerMmburger {
+    line-height: 0;
+}
+
+/**
+ * Content
+ */
+.pageContent {
+}
+.container {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    @include mx.S {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include mx.M {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    @include mx.L {
+        width: var.$container;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &--narrow {
+        @include mx.S {
+        }
+        @include mx.M {
+        }
+        @include mx.L {
+            width: var.$container--narrow;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &--ultranarrow {
+        @include mx.S {
+        }
+        @include mx.M {
+        }
+        @include mx.L {
+            width: var.$container--ultranarrow;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &--wide {
+        @include mx.S {
+        }
+        @include mx.M {
+        }
+        @include mx.L {
+            width:var.$container--wide;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    &--max {
+        @include mx.S {
+        }
+        @include mx.M {
+        }
+        @include mx.L {
+            width: calc(100% - var(--column-gap));
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+/**
+ * FOOTER
+ */
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: var(--row-gap);
+    margin-top: 60px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var.$colorSecond;
+    color: var.$colorWhite;
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        width: 100%;
+    }
+    &__nav {
+        width: 100%;
+        @include mx.S {
+            margin-bottom: 40px;
+        }
+        @include mx.M {
+        }
+        @include mx.L {
+        }
+    }
+    &__info1 {
+        @include mx.S {
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        @include mx.M {
+            flex: 1;
+        }
+        @include mx.L {
+            flex: 1;
+        }
+    }
+    &__info2 {
+        @include mx.S {
+            width: 100%;
+        }
+        @include mx.M {
+            flex: 1;
+        }
+        @include mx.L {
+            flex: 1;
+        }
+    }
+}
+
+.footerSocial {
+    height: 24px;
+    text-align: center;
+    @include mx.S {
+    }
+    @include mx.M {
+        text-align: right;
+    }
+    @include mx.L {
+        text-align: right;
+    }
+    &__link {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+        will-change: opacity;
+        transition: opacity 0.3s;
+        &:last-child {
+            @include mx.S {
+            }
+            @include mx.M {
+                margin-right: 0 !important;
+            }
+            @include mx.L {
+                margin-right: 0 !important;
+            }
+        }
+    }
+    &__icon {
+        width: 24px;
+        height: 24px;
+        fill: var.$colorWhite;
+        margin-right: 0 !important;
+    }
+}
+
+/**
+ * ERRORS
+ */
+.error404 {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    &__header {
+        text-align: center;
+    }
+}

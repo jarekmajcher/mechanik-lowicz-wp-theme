@@ -1,0 +1,24 @@
+<div class="wrap">
+    <h1 class="wp-heading-inline">{{ 'Wiadomości' }}</h1>
+
+    <hr class="wp-header-end">
+
+    <ul class="subsubsub">
+        <li class="all">
+            <a href="/wp-admin/admin.php?page=messages"{% if not current_form %} class="current" aria-current="page"{% endif%}>
+                {{ 'Wszystkie' }} <span class="count">({{ messages_count }})</span>
+            </a>
+            |
+        </li>
+        {% for form in forms %}
+            <li>
+                <a href="/wp-admin/admin.php?page=messages&form={{ form.form }}"{% if form.form == current_form %} class="current" aria-current="page"{% endif%}>
+                    {{ form.form|capitalize|replace({ '-': ' ', '_': ' ' }) }} <span class="count">({{ form.count }})</span>
+                </a>
+                {% if not loop.last %} |{% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    {{ table }}
+</div>

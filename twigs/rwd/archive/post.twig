@@ -1,0 +1,21 @@
+{% import '@rwd/macros/helper.twig' as helper_macro %}
+{% import '@rwd/macros/post.twig' as post_macro %}
+
+{% extends "@rwd/base.twig" %}
+
+{% block body %}
+    <section class="archivePost container">
+        <div class="archivePost__wrapper">
+            <div class="archivePost__content">
+                <div class="archivePost__posts">
+                    {% for post in posts %}
+                        {{ post_macro.box(post, (loop.first and paged == 1)) }}
+                    {% endfor %}
+                </div>
+                {{ helper_macro.pagination(posts) }}
+            </div>
+            <div class="archivePost__sidebar">
+            </div>
+        </div>
+    </section>
+{% endblock %}

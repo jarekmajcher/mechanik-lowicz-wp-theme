@@ -1,0 +1,26 @@
+/**
+ * Gutenberg
+ */
+ .wp-block {
+    width: 100% !important;
+    max-width: 1200px !important;
+}
+
+/**
+ * CPT price quick edit
+ */
+.inline-edit-price {
+    .inline-edit-date {
+        display: none !important;
+    }
+}
+
+/**
+ * ACF
+ */
+.acf-table tr:nth-child(odd) td {
+    background-color: #f5f5f5 !important;
+    &.acf-row-handle {
+        background-color: #f1f1f1 !important;
+    }
+}

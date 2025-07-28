@@ -1,0 +1,7 @@
+        {% import '@rwd/macros/helper.twig' as helper_macro %}
+
+        {{ function('wp_footer') }}
+
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ options.keys.google_maps }}&callback=initMap" type="text/javascript"></script>
+    </body>
+</html>

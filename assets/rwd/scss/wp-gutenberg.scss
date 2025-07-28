@@ -1,0 +1,84 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+/**
+ * Fix columns
+ */
+.wp-block-columns {
+    @include mx.S {
+        gap: var(--column-gap) !important;
+    }
+    @include mx.M {
+        gap: var(--column-gap) !important;
+    }
+    @include mx.L {
+        gap: var(--column-gap)!important;
+    }
+    .wp-block-column {
+    }
+}
+
+/**
+ * Fix group
+ */
+.wp-block-group {
+    position: relative;
+    z-index: 30;
+    &__inner-container {
+        width: 100%;
+        position: relative;
+        z-index: 30;
+    }
+}
+
+/**
+ * Fix image
+ */
+.wp-block-image {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/**
+ * Fix Media Text
+ */
+.wp-block-media-text {
+    display: grid !important;
+
+    // Fix padding in container
+    &.container {
+        .wp-block-media-text__content {
+            padding-right: 0;
+            padding-left: var(--column-gap);
+        }
+        &.has-media-on-the-right {
+            .wp-block-media-text__content {
+                padding-right: var(--column-gap);
+                padding-left: 0;
+            }
+        }
+    }
+
+}
+
+/**
+ * Block Embed
+ */
+.wp-block-embed {
+    &__wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+

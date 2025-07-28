@@ -1,0 +1,34 @@
+<div class="gSlider{% if fields.items|length > 1 %} gSlider--slider{% endif %} {{ block.className }}">
+    <div class="gSlider__slider1">
+        <div class="gSlider__items swiper-wrapper">
+            {% for item in fields.items %}
+                <div class="gSlider__item gSlider__item--{{ item.style }} swiper-slide">
+                    <div class="gSlider__imgWrapper">
+                        {{ wp_get_attachment_image(item.image, 'full', { class: 'gSlider__img' }) }}
+                    </div>
+                    <div class="gSlider__contentWrapper">
+                        {% if item.title %}
+                            <div class="gSlider__title">{{ item.title }}</div>
+                        {% endif %}
+                        {% if item.content %}
+                            <div class="gSlider__content">{{ item.content }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="gSlider__pagination swiper-pagination"></div>
+    </div>
+    <div class="gSlider__links">
+        <div class="gSlider__linksContainer">
+            {% for link in fields.links %}
+                <div class="gSlider__linksItem">
+                    <a class="gSlider__linksLink" href="{{ link.url }}">
+                        <span class="gSlider__linksIcon"><i class="{{ link.icon }}"></i></span>
+                        <span class="gSlider__linksText">{{ link.text }}</span>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

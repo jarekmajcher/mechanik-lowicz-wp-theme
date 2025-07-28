@@ -1,0 +1,10 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+.sBackToParentPage {
+    color: var.$colorMain;
+    &__link {
+
+    }
+}

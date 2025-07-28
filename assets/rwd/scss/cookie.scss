@@ -1,0 +1,79 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+/**
+ * Cookie
+ */
+.cookie {
+    z-index: 888;
+    padding: 15px 15px;
+    font-size: 0.8em;
+    line-height: 1.6em;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    transition: all 1s ease 0s;
+    background-color: var.$colorWhite;
+    color: var.$colorBlack;
+    @include mx.S {
+        position: relative;
+    }
+    @include mx.M {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        width: 420px;
+    }
+    @include mx.L {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        width: 420px;
+    }
+    &--hidden {
+        @include mx.S {
+            display: none;
+        }
+        @include mx.M {
+            opacity: 0;
+        }
+        @include mx.L {
+            opacity: 0;
+        }
+    }
+    &__info {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 0.8em;
+        line-height: 1.4em;
+        p {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        a {
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+    &__buttons{
+        margin-bottom: 0;
+        text-align: center;
+        width: 100%;
+    }
+    &__button {
+        display: inline-block;
+        padding: 3px 7px;
+        margin: 0 0 0 10px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.8em;
+        &--accept {
+            background-color: var.$colorMain;
+            color: var.$colorWhite;
+        }
+        &--reject {
+            color: var.$colorBlack;
+        }
+    }
+}

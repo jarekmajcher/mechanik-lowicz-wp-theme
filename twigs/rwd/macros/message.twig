@@ -1,0 +1,14 @@
+{# v 1.3 #}
+
+{% macro messages(messages) %}
+    {% if messages %}
+        <ul class="message">
+            {% for message in messages %}
+                <li class="{{ 'message__item'|prepare_class('--' ~ message.getType) }}">
+                    {{ ('[icon icon="message-' ~ message.getType ~ '" class="message__icon"]')|shortcodes }}
+                    <div class="message__text">{{ message.getMessage }}</div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}

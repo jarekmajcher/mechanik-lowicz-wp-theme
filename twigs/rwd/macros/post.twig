@@ -1,0 +1,31 @@
+{% macro box(post) %}
+    {% set categories = post.get_terms('category') %}
+    {% set thumbnail = get_the_post_thumbnail(post.ID, 'medium', { class: 'boxPost__img' }) %}
+
+    <div class="boxPost">
+        <a href="{{ post.link }}" class="boxPost__link">
+            <div class="boxPost__image">
+                {% if thumbnail %}
+                    {{ thumbnail }}
+                {% else %}
+                    <div class="boxPost__img boxPost__img--none">&nbsp;</div>
+                {% endif %}
+            </div>
+            <div class="boxPost__content">
+                <div class="boxPost__categories">
+                    {% for category in categories %}
+                        {{ category.title }}
+                        {% if not loop.last %}<span>&nbsp;|&nbsp;</span>{% endif %}
+                    {% endfor %}
+                </div>
+                <h2 class="boxPost__title h3">{{ post.name }}</h2>
+                <div class="boxPost__description">{{ post.post_excerpt }}</div>
+                <div class="boxPost__details">
+                    <span class="boxPost__date">{{ post.date('d F Y') }}</span>
+                    <span>&nbsp;|&nbsp;</span>
+                    <span class="boxPost__publisher">{{ post.meta('post_publisher') }}</span>
+                </div>
+            </div>
+        </a>
+    </div>
+{% endmacro %}

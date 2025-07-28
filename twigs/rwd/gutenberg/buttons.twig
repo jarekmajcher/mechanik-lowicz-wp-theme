@@ -1,0 +1,17 @@
+{% import '@rwd/macros/helper.twig' as helper_macro %}
+
+<div class="gButtons gButtons--{{ fields.align }} {{ block.className }}">
+    {% for button in fields.items %}
+        <div class="gButtons__item">
+            {% if button.link %}
+                <a {{ button.attributes }} href="{{ button.link }}" class="{{ 'gButtons__button'|prepare_class(button.class) }}"{% if button.new_tab %} target="_blank" rel="noreferrer noopener"{% endif %}>
+                    {{ button.prefix }}<span>{{ button.text }}</span>{{ button.suffix }}
+                </a>
+            {% else %}
+                <button {{ button.attributes }} class="{{ 'gButtons__button'|prepare_class(button.class) }}">
+                    {{ button.prefix }}<span>{{ button.text }}</span>{{ button.suffix }}
+                </button>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

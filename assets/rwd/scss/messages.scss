@@ -1,0 +1,61 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+/**
+ * Message
+ */
+.message {
+    list-style: none;
+    padding: 0;
+    margin: 40px auto;
+    @include mx.S {
+    }
+    @include mx.M {
+    }
+    @include mx.L {
+        max-width: 300px;
+    }
+    &__item {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+        &::before {
+            display: none !important;
+        }
+        &--error {
+            color: var.$colorError;
+            .message__icon {
+                fill: var.$colorError;
+            }
+        }
+        &--warning {
+            color: var.$colorWarning;
+            .message__icon {
+                fill: var.$colorWarning;
+            }
+        }
+        &--info {
+            color: var.$colorInfo;
+            .message__icon {
+                fill: var.$colorInfo;
+            }
+        }
+        &--success {
+            color: var.$colorSuccess;
+            .message__icon {
+                fill: var.$colorSuccess;
+            }
+        }
+    }
+    &__icon {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin-bottom: 20px;
+    }
+    &__text {
+        font-weight: 700;
+        font-size: 24px;
+    }
+}

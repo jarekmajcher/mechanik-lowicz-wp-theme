@@ -1,0 +1,16 @@
+{
+    "name": "acf/buttons",
+    "title": "Buttony",
+    "description": "Buttony",
+    "style": [ "" ],
+    "category": "formatting",
+    "icon": "images-alt",
+    "keywords": ["buttons"],
+    "supports": {
+        "align": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "acf-block.php"
+    }
+}

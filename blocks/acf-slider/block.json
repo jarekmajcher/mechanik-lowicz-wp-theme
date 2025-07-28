@@ -1,0 +1,16 @@
+{
+    "name": "acf/slider",
+    "title": "Slider",
+    "description": "Slider",
+    "style": [ "" ],
+    "category": "formatting",
+    "icon": "images-alt",
+    "keywords": ["slider"],
+    "supports": {
+        "align": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "acf-block.php"
+    }
+}

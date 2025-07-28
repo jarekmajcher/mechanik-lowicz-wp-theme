@@ -1,0 +1,106 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+.gLogos1 {
+    --swiper-theme-color: #{var.$colorWhite};
+    --swiper-navigation-size: 14px;
+    .swiper-button-prev,
+    .swiper-button-next {
+        z-index: 20;
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: 10;
+            display: block;
+            width: 25px !important;
+            height: 25px !important;
+            border-radius: 50%;
+            background-color: var.$colorSecond;
+        }
+        &::after {
+            z-index: 20;
+        }
+    }
+    .swiper-button-prev {
+        left: 30px;
+    }
+    .swiper-button-next {
+        right: 30px;
+    }
+    &__carousel {
+        overflow: hidden;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 10;
+            width: 100px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 10;
+            width: 100px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(270deg, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+        }
+    }
+    &__wrapper {
+    }
+    &__slide {
+        text-align: center;
+    }
+    &__imgWrapper {
+        border: 1px solid var.$colorMono1;
+        padding: 20px;
+        margin-bottom: 20px;
+        height: 170px;
+    }
+    &__img {
+        display: inline-block;
+        width: 180px;
+        height: auto;
+    }
+}
+
+.gLogos2 {
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        &--one {
+            justify-content: center;
+        }
+        &--multiple {
+            justify-content: space-between;
+        }
+    }
+    &__imgWrapper {
+        text-align: center;
+        margin-bottom: var(--row-gap);
+        @include mx.S {
+            width: 40%;
+        }
+        @include mx.M {
+            width: 20%;
+        }
+        @include mx.L {
+            width: 18%;
+        }
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+    }
+}
+

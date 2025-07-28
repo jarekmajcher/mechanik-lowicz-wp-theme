@@ -1,0 +1,86 @@
+{% extends "@rwd/base.twig" %}
+
+{% block body %}
+    {% set thumbnail = get_the_post_thumbnail(post.ID, 'medium', { class: 'singlePost__img' }) %}
+    {% set author = getTimberPost(post.meta('post_author')) %}
+
+    <article class="singlePost container" itemscope itemtype="http://schema.org/NewsArticle">
+        <div class="singlePost__wrapper">
+            <div class="singlePost__content">
+                {# Back #}
+                <div class="singlePost__back">
+                    <div class="sBackToParentPage">
+                        <a href="{{ __('/blog/', 'mechanik-lowicz') }}" class="sBackToParentPage__link"><i class="fa-solid fa-arrow-left-long"></i>&nbsp;{{ __('Wróć do artykułów', 'mechanik-lowicz') }}</a>
+                    </div>
+                </div>
+
+                {# Title #}
+                <h1 class="singlePost__title h2" itemprop="headline">{{ post.post_title }}</h1>
+
+                {# Info #}
+                <div class="singlePost__info">
+                    <div class="singlePost__infoDate" itemprop="datePublished" content="{{ post.date('Y-m-d') }}">
+                        {{ post.date('d F Y') }}
+                    </div>
+                    <div class="singlePost__infoSocial">
+                        {{ '[social class_wrapper="postSocial" class_link="postSocial__link" class_icon="postSocial__icon"]'|shortcodes }}
+                    </div>
+                </div>
+
+                {# Text #}
+                <div class="singlePost__text" itemprop="articleBody">
+                    {{ post.content|remove_orphan }}
+                </div>
+
+                {# Thumbnail #}
+                {% set thumbnail = fn('wp_get_attachment_metadata', post._thumbnail_id) %}
+                <div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="height" content="{{ thumbnail.height }}">
+                    <meta itemprop="width" content="{{ thumbnail.width }}">
+                    <meta itemprop="url" content="{{ fn('get_the_post_thumbnail_url') }}">
+                </div>
+
+                {# Share #}
+                <div class="singlePost__share">
+                    <div class="singlePost__shareText">{{ __('Podziel się artykułem', 'mechanik-lowicz') }}</div>
+                    <div class="singlePost__shareItems">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ post.link|url_encode }}" target="_blank" rel="noreferrer noopener" class="singlePost__shareLink">
+                            {{ '[icon icon="facebook" class="singlePost__shareIcon"]'|shortcodes }}
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ post.link|url_encode }}&title={{ post.title|url_encode }}&summary=&source=" target="_blank" rel="noreferrer noopener" class="singlePost__shareLink">
+                            {{ '[icon icon="linkedin" class="singlePost__shareIcon"]'|shortcodes }}
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?text={{ post.link|url_encode }}" target="_blank" rel="noreferrer noopener" class="singlePost__shareLink">
+                            {{ '[icon icon="x" class="singlePost__shareIcon"]'|shortcodes }}
+                        </a>
+                    </div>
+                </div>
+
+                {# Buttons #}
+                <div class="singlePost__buttons gButtons gButtons--left">
+                    {% if previous_post %}
+                        <a href="{{ fn('get_permalink', previous_post.ID) }}" class="gButtons__button gButtons__button--border gButtons__button--main"><i class="fa-solid fa-arrow-left-long"></i>&nbsp;<span>{{ __('Poprzedni artykuł', 'mechanik-lowicz') }}</span></a>
+                    {% endif %}
+                    {% if next_post %}
+                        <a href="{{ fn('get_permalink', next_post.ID) }}" style="margin-left: auto;" class="gButtons__button gButtons__button--solid gButtons__button--main"><span>{{ __('Następny artykuł', 'mechanik-lowicz') }}</span>&nbsp;<i class="fa-solid fa-arrow-right-long"></i></a>
+                    {% endif %}
+                </div>
+
+                {# Similar #}
+                <div class="singlePost__similar">
+                    <h6 class="singlePost__similarTitle h3">
+                        {{ __('Polecane artykuły:', 'mechanik-lowicz') }}
+                    </h6>
+                    <div class="singlePost__similarPosts">
+                        {{ '[similar_posts]'|shortcodes }}
+                    </div>
+                    <div class="singlePost__similarButtons">
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="singlePost__sidebar"></div>
+        </div>
+    </article>
+{% endblock %}

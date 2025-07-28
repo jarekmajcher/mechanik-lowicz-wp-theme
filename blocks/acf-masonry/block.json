@@ -1,0 +1,16 @@
+{
+    "name": "acf/masonry",
+    "title": "Masonry",
+    "description": "Masonry",
+    "style": [ "" ],
+    "category": "formatting",
+    "icon": "images-alt",
+    "keywords": ["masonry"],
+    "supports": {
+        "align": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "acf-block.php"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "name": "acf/logos",
+    "title": "Loga",
+    "description": "Loga",
+    "style": [ "" ],
+    "category": "formatting",
+    "icon": "images-alt",
+    "keywords": ["logos"],
+    "supports": {
+        "align": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "acf-block.php"
+    }
+}

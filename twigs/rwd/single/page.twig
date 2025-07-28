@@ -1,0 +1,7 @@
+{% extends "@rwd/base.twig" %}
+
+{% block body %}
+    <article class="singlePage">
+        {{ post.content|remove_orphan }}
+    </article>
+{% endblock %}

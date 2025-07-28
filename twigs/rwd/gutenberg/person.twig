@@ -1,0 +1,16 @@
+{% import '@rwd/macros/helper.twig' as helper_macro %}
+
+<div class="gPerson {{ block.className }}">
+    <div class="gPerson__imgWrapper">
+        {{ wp_get_attachment_image(fields.image.ID, 'medium', { class: 'gPerson__img' }) }}
+    </div>
+    <div class="gPerson__text">
+        <h4 class="gPerson__name">{{ fields.name }}</h4>
+        <div class="gPerson__content">{{ fields.content }}</div>
+        {% if fields.linkedin %}
+            <div class="gPerson__linkedin">
+                <a class="gPerson__linkedinLink" href="{{ fields.linkedin }}" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-linkedin"></i> <span>{{ __('zobacz więcej na LinkedIn', 'wygrywajacezespoly') }}</span></a>
+            </div>
+        {% endif %}
+    </div>
+</div>

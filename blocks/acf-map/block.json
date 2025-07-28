@@ -1,0 +1,16 @@
+{
+    "name": "acf/map",
+    "title": "Mapa",
+    "description": "Mapa",
+    "style": [ "" ],
+    "category": "formatting",
+    "icon": "images-alt",
+    "keywords": ["map"],
+    "supports": {
+        "align": false
+    },
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "acf-block.php"
+    }
+}

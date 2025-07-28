@@ -1,0 +1,258 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+.boxPost {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid var.$colorMono3;
+    &__link {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    &__image {
+        @include mx.S {
+            display: none;
+        }
+        @include mx.M {
+            width: 180px;
+        }
+        @include mx.L {
+            width: 180px;
+        }
+    }
+    &__img {
+        width: 100%;
+        height: auto;
+        &--none {
+            width: 100%;
+            height: 180px;
+            background-color: var.$colorMono1;
+        }
+    }
+    &__content {
+        @include mx.S {
+            width: 100%;
+        }
+        @include mx.M {
+            width: calc(100% - 180px);
+            padding-left: var(--column-gap);
+        }
+        @include mx.L {
+            width: calc(100% - 180px);
+            padding-left: var(--column-gap);
+        }
+    }
+    &__categories {
+        margin-bottom: 20px;
+        color: var.$colorMain;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__title {
+    }
+    &__description {
+        margin-bottom: 20px;
+    }
+    &__publisher {
+        font-weight: 700;
+    }
+}
+
+.singlePost {
+    &__back {
+        margin-bottom: 20px;
+    }
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        column-gap: var(--column-gap);
+        row-gap: var(--row-gap);
+    }
+    &__content {
+        @include mx.S {
+            width: 100%;
+        }
+        @include mx.M {
+            width: 100%;
+        }
+        @include mx.L {
+            flex: 9;
+        }
+    }
+    &__title {
+    }
+    &__info {
+        margin-bottom: 20px;
+    }
+    &__infoPublisher {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    &__infoDate {
+        margin-bottom: 15px;
+    }
+    &__infoSocial {
+        .postSocial {
+            &__link {
+                margin-right: 10px;
+            }
+            &__icon {
+                width: 25px;
+                height: 25px;
+                fill: var.$colorMono3;
+            }
+        }
+    }
+    &__text {
+        padding-bottom: 60px;
+        margin-bottom: 60px;
+        border-bottom: 1px solid var.$colorMono2;
+        h2 {
+            @extend .h3;
+            margin-top: 1.5em;
+        }
+        h3 {
+            @extend .h4;
+            margin-top: 1.5em;
+        }
+        h4 {
+            @extend .h4;
+            margin-top: 1.5em;
+        }
+        ul {
+            @extend .listDisc;
+        }
+        ol {
+            @extend .listNumeric;
+        }
+        .wp-block-image {
+            margin-bottom: 1em;
+        }
+    }
+
+    // Share
+    &__share {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: center;
+        padding-bottom: 60px;
+        margin-bottom: 60px;
+        border-bottom: 1px solid var.$colorMono2;
+    }
+    &__shareText {
+        font-weight: 700;
+        color: var.$colorMain;
+        margin-right: 10px;
+    }
+    &__shareItems {
+        display: flex;
+    }
+    &__shareLink {
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        border-radius: 100px;
+        box-shadow: 0 0 10px 0 rgba(var.$colorBlack, 0.2);
+        margin-left: 10px;
+        text-align: center;
+    }
+    &__shareIcon {
+        width: 20px;
+        height: 20px;
+        fill: var.$colorMono3;
+
+    }
+
+    // Buttons
+    &__buttons {
+        margin-bottom: 100px;
+    }
+
+    // Similar
+    &__similar {
+    }
+    &__similarTitle {
+        padding-bottom: 30px !important;
+        margin-bottom: 60px !important;
+        border-bottom: 1px solid var.$colorMono2;
+    }
+    &__similarPosts {
+        margin-bottom: 40px;
+    }
+
+    &__sidebar {
+        @include mx.S {
+            width: 100%;
+        }
+        @include mx.M {
+            width: 100%;
+        }
+        @include mx.L {
+            flex: 3;
+        }
+    }
+}
+
+.archivePost {
+    &__top {
+        width: 100%;
+        margin-bottom: 60px;
+    }
+    &__topTitle {
+        margin-bottom: 20px;
+        font-size: 42px;
+        font-weight: 700;
+    }
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        column-gap: var(--column-gap);
+        row-gap: var(--row-gap);
+    }
+    &__content {
+        @include mx.S {
+            width: 100%;
+        }
+        @include mx.M {
+            width: 100%;
+        }
+        @include mx.L {
+            flex: 9;
+        }
+    }
+    &__sidebar {
+        @include mx.S {
+            width: 100%;
+        }
+        @include mx.M {
+            width: 100%;
+        }
+        @include mx.L {
+            flex: 3;
+        }
+    }
+    &__sidebarTitle {
+        margin-bottom: 2em;
+        padding-bottom: 0.5em;
+        border-bottom: 1px solid var.$colorMono3;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    &__termsLink {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        font-weight: 700;
+        color: var.$colorMono3;
+        margin-bottom: 1em;
+    }
+}

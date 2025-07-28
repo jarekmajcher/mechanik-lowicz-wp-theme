@@ -1,0 +1,6 @@
+/node_modules/
+/vendor/
+/yarn-error.log
+
+/public/*
+!/public/.htaccess

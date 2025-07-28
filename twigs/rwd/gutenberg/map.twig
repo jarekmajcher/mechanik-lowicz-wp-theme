@@ -1,0 +1,7 @@
+<div class="gMap" data-latitude="{{ fields.latitude }}" data-longitude="{{ fields.longitude }}" data-zoom="{{ fields.zoom }}">
+    {% for item in fields.items %}
+        <div class="gMap__item" data-latitude="{{ item.latitude }}" data-longitude="{{ item.longitude }}">
+            {{ item.address }}
+        </div>
+    {% endfor %}
+</div>
