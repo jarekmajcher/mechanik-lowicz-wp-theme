@@ -6,15 +6,8 @@
  * Fix columns
  */
 .wp-block-columns {
-    @include mx.S {
-        gap: var(--column-gap) !important;
-    }
-    @include mx.M {
-        gap: var(--column-gap) !important;
-    }
-    @include mx.L {
-        gap: var(--column-gap)!important;
-    }
+    column-gap: var(--column-gap) !important;
+    row-gap: var(--row-gap) !important;
     .wp-block-column {
     }
 }

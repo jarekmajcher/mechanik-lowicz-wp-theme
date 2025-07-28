@@ -1,3 +1,22 @@
 @use 'mx';
 @use 'var';
 @use 'sass:math';
+
+.wp-block-media-text.mtSpecial1 {
+    row-gap: var(--row-gap);
+    .wp-block-media-text__content {
+    }
+}
+
+.wp-block-columns.columnsSpecial1 {
+    padding: 20px;
+    border-radius: 15px;
+    row-gap: calc(var(--row-gap) * 2) !important;
+    @include mx.S {
+    }
+    @include mx.M {
+    }
+    @include mx.L {
+        padding: 40px;
+    }
+}

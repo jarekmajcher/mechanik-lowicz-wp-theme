@@ -5,7 +5,7 @@
 .gSlider {
     position: relative;
     z-index: 1;
-    overflow: hidden;
+    //overflow: hidden;
     width: 100%;
     &__items {
         display: flex;
@@ -78,21 +78,24 @@
     &__content {
         margin-bottom: 2em;
         font-size: 1.2em;
-        color: var.$colorSecond;
     }
     &__links {
         position: relative;
         top: -140px;
+        margin-bottom: -140px;
         z-index: 999;
         display: flex;
         justify-content: center;
+        overflow: visible;
         @include mx.S {
         }
         @include mx.M {
-            top: -40px;
+           top: -40px;
+            margin-bottom: -40px;
         }
         @include mx.L {
             top: -40px;
+            margin-bottom: -40px;
         }
     }
     &__linksContainer {

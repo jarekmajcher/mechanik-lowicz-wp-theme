@@ -4,12 +4,6 @@
 
 {% include '@rwd/partials/header.twig' %}
 
-{#
-<div id="mobile_nav" class="mobileNav">
-    {{ menu_macro.element(menu.mobile_navigation.items, 'mobileNav', post.type.slug) }}
-</div>
-#}
-
 <div class="wrapper">
 
     {#
@@ -20,14 +14,6 @@
                     <img class="headerLogo__img" src="{{ asset('images/logo/mechanik-lowicz-color.svg') }}" alt="{{ site.name }}" />
                 </a>
             </div>
-
-            <nav class="header__nav headerNav" id="headerNav">
-                {{ menu_macro.element(menu.header_navigation.items, 'headerNav', post.type.slug) }}
-            </nav>
-
-            <div class="header__mmburger headerMmburger">
-                <mm-burger menu="mobile_nav" fx="spin"></mm-burger>
-            </div>
         </div>
     </header>
     #}
@@ -37,12 +23,7 @@
     </div>
 
     <footer class="footer">
-        <div class="footer__container footer__container--1 container">
-            <div class="footer__nav">
-                {{ menu_macro.element(menu.footer_navigation.items, 'footerNav', post.type.slug) }}
-            </div>
-        </div>
-        <div class="footer__container footer__container--2 container">
+        <div class="footer__container container container--wide">
             <div class="footer__info1">
                 {{ sidebar.footer_info_1|shortcodes }}
             </div>

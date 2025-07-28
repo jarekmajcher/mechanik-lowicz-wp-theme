@@ -28,6 +28,13 @@ a {
     text-decoration: none;
 }
 
+p {
+    margin-bottom: 1em;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
 .iconsprite {
     display: none;
 }
