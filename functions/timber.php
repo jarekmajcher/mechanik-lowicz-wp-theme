@@ -38,6 +38,7 @@ class Theme_Timber {
         // Options
         $context['options'] = array(
             'social' => get_field('social', 'option'),
+            'keys' => get_field('keys', 'option'),
         );
 
         return $context;
