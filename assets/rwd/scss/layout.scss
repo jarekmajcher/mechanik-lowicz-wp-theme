@@ -235,7 +235,7 @@ html {
     &__info1 {
         @include mx.S {
             width: 100%;
-            margin-bottom: 40px;
+            margin-bottom: 1em;
             text-align: center;
         }
         @include mx.M {
@@ -248,6 +248,7 @@ html {
     &__info2 {
         @include mx.S {
             width: 100%;
+            text-align: center;
         }
         @include mx.M {
             flex: 1;

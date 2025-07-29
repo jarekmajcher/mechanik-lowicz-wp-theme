@@ -198,3 +198,42 @@ p {
         display: none;
     }
 }
+
+.formatted {
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 0.2em;
+    }
+    ul:not(.blocks-gallery-grid) {
+        margin-left: 1em;
+        margin-bottom: 1em;
+        list-style: disc;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        li {
+            position: relative;
+            margin-bottom: 0.2em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    ol {
+        margin-left: 2em;
+        margin-bottom: 1em;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        li {
+            position: relative;
+            margin-bottom: 0.2em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    a {
+        color: var.$colorMain;
+        text-decoration: underline;
+    }
+}
