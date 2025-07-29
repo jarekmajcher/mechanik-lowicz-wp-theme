@@ -41,6 +41,17 @@
 .wp-block-media-text {
     display: grid !important;
 
+    & > .wp-block-media-text__content {
+        padding: var(--row-gap) var(--column-gap);
+        @include mx.S {
+        }
+        @include mx.M {
+        }
+        @include mx.L {
+            padding: calc(var(--row-gap) * 2) calc(var(--column-gap) * 2);
+        }
+    }
+
     // Fix padding in container
     &.container {
         .wp-block-media-text__content {

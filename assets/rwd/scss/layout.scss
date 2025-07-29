@@ -158,12 +158,12 @@ html {
     display: flex;
     flex-wrap: wrap;
     @include mx.S {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: var(--column-gap);
+        padding-right: var(--column-gap);
     }
     @include mx.M {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: var(--column-gap);
+        padding-right: var(--column-gap);
     }
     @include mx.L {
         width: var.$container;

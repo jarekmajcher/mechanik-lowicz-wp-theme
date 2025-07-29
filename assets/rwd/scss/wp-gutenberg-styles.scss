@@ -9,7 +9,7 @@
 }
 
 .wp-block-columns.columnsSpecial1 {
-    padding: 20px;
+    padding: var(--column-gap) ;
     border-radius: 15px;
     row-gap: calc(var(--row-gap) * 2) !important;
     @include mx.S {
@@ -17,6 +17,6 @@
     @include mx.M {
     }
     @include mx.L {
-        padding: 40px;
+        padding: calc(var(--column-gap) * 2);
     }
 }
