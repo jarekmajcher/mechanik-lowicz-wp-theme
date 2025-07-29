@@ -21,7 +21,7 @@ class Theme_Wp_Gutenberg {
             [
                 'name'  => 'Główny',
                 'slug'  => 'main',
-                'color'	=> '#000000'
+                'color'	=> '#a61235'
             ],
             [
                 'name'  => 'Dopełniający',
