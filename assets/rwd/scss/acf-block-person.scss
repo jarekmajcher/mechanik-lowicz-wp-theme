@@ -5,7 +5,7 @@
 .gPerson {
     display: flex;
     flex-wrap: wrap;
-    background-color: var.$colorMono1;
+    background-color: var(--wp--preset--color--secondary1);
     padding: 20px;
     @include mx.S {
     }

@@ -5,5 +5,5 @@
 .gMap {
     width: 100%;
     height: 600px;
-    border-top: 2px solid var.$colorMono1;
+    border-top: 2px solid var(--wp--preset--color--secondary1);
 }

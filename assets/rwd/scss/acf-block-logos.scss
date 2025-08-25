@@ -3,7 +3,7 @@
 @use 'sass:math';
 
 .gLogos1 {
-    --swiper-theme-color: #{var.$colorWhite};
+    --swiper-theme-color: #{var(--wp--preset--color--mono-white)};
     --swiper-navigation-size: 14px;
     .swiper-button-prev,
     .swiper-button-next {
@@ -16,7 +16,7 @@
             width: 25px !important;
             height: 25px !important;
             border-radius: 50%;
-            background-color: var.$colorSecond;
+            background-color: var(--wp--preset--color--secondary1);
         }
         &::after {
             z-index: 20;
@@ -60,7 +60,7 @@
         text-align: center;
     }
     &__imgWrapper {
-        border: 1px solid var.$colorMono1;
+        border: 1px solid var(--wp--preset--color--secondary1);
         padding: 20px;
         margin-bottom: 20px;
         height: 170px;

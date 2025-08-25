@@ -10,6 +10,6 @@ $fields = get_field($slug);
 $context = Timber::context();
 
 $vars = ['context' => $context, 'block' => $block, 'fields' => $fields];
-$vars = apply_filters('acf_gutenberg_vars_' . $slug, $vars);
+$vars = apply_filters('acf_blocks_vars_' . $slug, $vars);
 
-echo Timber::compile('@rwd/gutenberg/' . $slug . '.twig', $vars);
+echo Timber::compile('@rwd/acf-blocks/' . $slug . '.twig', $vars);

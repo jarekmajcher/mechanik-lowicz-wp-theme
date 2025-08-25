@@ -3,149 +3,52 @@
 @use 'sass:math';
 @use 'sass:map';
 
-/**
- * MAIN
- */
-/**
- * MAIN
- */
 html {
     @include mx.S {
-        font-size: 20px;
+        font-size: 16px;
     }
     @include mx.M {
-        font-size: 20px;
+        font-size: 24px;
     }
     @include mx.L {
-        font-size: 40px;
-    }
-    @include mx.XL {
-        font-size: 40px;
+        font-size: 32px;
     }
 }
 
 :root {
+    --column-gap: 2rem;
+    --row-gap: 1rem;
+
     @include mx.S {
-        --column-gap: #{map.get(var.$column-gap-map, S)};
-        --row-gap: #{map.get(var.$row-gap-map, S)};
+        --wp--preset--font-size--small: 0.8em;
+        --wp--preset--font-size--medium: 1.2em;
+        --wp--preset--font-size--large: 1.4em;
+        --wp--preset--font-size--x-large: 2em;
+        --wp--preset--font-size--huge: 2.4em;
+        --wp--preset--font-size--normal: 16px;
     }
     @include mx.M {
-        --column-gap: #{map.get(var.$column-gap-map, M)};
-        --row-gap: #{map.get(var.$row-gap-map, M)};
+        --wp--preset--font-size--small: 0.8em;
+        --wp--preset--font-size--medium: 1.2em;
+        --wp--preset--font-size--large: 1.8em;
+        --wp--preset--font-size--x-large: 2.4em;
+        --wp--preset--font-size--huge: 3em;
+        --wp--preset--font-size--normal: 16px;
     }
     @include mx.L {
-        --column-gap: #{map.get(var.$column-gap-map, L)};
-        --row-gap: #{map.get(var.$row-gap-map, L)};
-    }
-    @include mx.XL {
-        --column-gap: #{map.get(var.$column-gap-map, XL)};
-        --row-gap: #{map.get(var.$row-gap-map, XL)};
+        --wp--preset--font-size--small: 0.8em;
+        --wp--preset--font-size--medium: 1.2em;
+        --wp--preset--font-size--large: 1.8em;
+        --wp--preset--font-size--x-large: 2.4em;
+        --wp--preset--font-size--huge: 3em;
+        --wp--preset--font-size--normal: 16px;
     }
 }
-.wrapper {
-    background-color: var.$colorWhite;
-    min-height: 100%;
-    overflow: hidden;
-}
+
 .body {
-    font-family: var.$fontFamily;
-    font-size: var.$fontSize;
-}
-
-/**
- * TOP
- */
-.top {
-    position: relative;
-}
-
-/**
- * Header
- */
-.header {
-    width: 100%;
-    background-color: var.$colorWhite;
-    transition: all 0.4s ease;
-    @include mx.S {
-        padding: 20px 0;
-    }
-    @include mx.M {
-        padding: 20px 0;
-    }
-    @include mx.L {
-    }
-    &__container {
-        position: relative;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        align-content: center;
-    }
-    &__logo {
-        position: relative;
-        z-index: 999;
-        padding: 5px 0;
-        @include mx.S {
-            width: 140px;
-            margin-right: auto;
-        }
-        @include mx.M {
-            width: 180px;
-            margin-right: auto;
-        }
-        @include mx.L {
-            width: 200px;
-        }
-    }
-    &__nav {
-        position: relative;
-        z-index: 999;
-        @include mx.S {
-            display: none;
-        }
-        @include mx.M {
-            display: none;
-        }
-        @include mx.L {
-
-        }
-    }
-    &__mmburger {
-        position: relative;
-        z-index: 999;
-        @include mx.S {
-            margin-left: 15px;
-        }
-        @include mx.M {
-            margin-left: 30px;
-        }
-        @include mx.L {
-            display: none;
-        }
-    }
-
-}
-.headerLogo {
-    line-height: 0;
-    &__link {
-        line-height: 0;
-    }
-    &__img {
-        height: auto;
-        @include mx.S {
-            width: 140px;
-        }
-        @include mx.M {
-            width: 180px;
-        }
-        @include mx.L {
-            width: 200px;
-        }
-    }
-}
-.headerMmburger {
-    line-height: 0;
+    font-family: var(--wp--preset--font-family--montserrat);
+    font-size: var(--wp--preset--font-size--normal);
+    color: var(--wp--preset--color--mono-black)
 }
 
 /**
@@ -153,65 +56,29 @@ html {
  */
 .pageContent {
 }
-.container {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
+
+/**
+ * Container
+ */
+.is-layout-constrained {
     @include mx.S {
-        padding-left: var(--column-gap);
-        padding-right: var(--column-gap);
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     @include mx.M {
-        padding-left: var(--column-gap);
-        padding-right: var(--column-gap);
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
     @include mx.L {
-        width: var.$container;
-        margin-left: auto;
-        margin-right: auto;
     }
-    &--narrow {
+    & > * {
         @include mx.S {
+            max-width: 100vw !important;
         }
         @include mx.M {
+            max-width: 100vw !important;
         }
         @include mx.L {
-            width: var.$container--narrow;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-    &--ultranarrow {
-        @include mx.S {
-        }
-        @include mx.M {
-        }
-        @include mx.L {
-            width: var.$container--ultranarrow;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-    &--wide {
-        @include mx.S {
-        }
-        @include mx.M {
-        }
-        @include mx.L {
-            width:var.$container--wide;
-            margin-left: auto;
-            margin-right: auto;
-        }
-    }
-    &--max {
-        @include mx.S {
-        }
-        @include mx.M {
-        }
-        @include mx.L {
-            width: calc(100% - var(--column-gap));
-            margin-left: auto;
-            margin-right: auto;
         }
     }
 }
@@ -225,17 +92,17 @@ html {
     row-gap: var(--row-gap);
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: var.$colorMono1;
-    color: var.$colorBlack;
+    background-color: var(--wp--preset--color--secondary1);
+    color: var(--wp--preset--color--mono-black);
     &__container {
         display: flex;
         flex-wrap: wrap;
         position: relative;
+        width: 100%;
     }
     &__info1 {
         @include mx.S {
             width: 100%;
-            margin-bottom: 1em;
             text-align: center;
         }
         @include mx.M {
@@ -291,7 +158,7 @@ html {
     &__icon {
         width: 24px;
         height: 24px;
-        fill: var.$colorWhite;
+        fill: var(--wp--preset--color--mono-white);
         margin-right: 0 !important;
     }
 }

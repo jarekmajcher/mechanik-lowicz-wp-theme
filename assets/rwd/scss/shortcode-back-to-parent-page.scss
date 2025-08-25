@@ -3,7 +3,7 @@
 @use 'sass:math';
 
 .sBackToParentPage {
-    color: var.$colorMain;
+    color: var(--wp--preset--color--primary-1);
     &__link {
 
     }

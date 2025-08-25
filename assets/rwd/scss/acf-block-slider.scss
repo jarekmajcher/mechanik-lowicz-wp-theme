@@ -24,11 +24,11 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            border: 2px solid var.$colorWhite;
+            border: 2px solid var(--wp--preset--color--mono-white);
             background-color: transparent !important;
             opacity: 1 !important;
             &-active {
-                background-color: var.$colorWhite !important;
+                background-color: var(--wp--preset--color--mono-white) !important;
             }
         }
     }
@@ -58,8 +58,8 @@
         justify-content: center;
         align-items: center;
         align-content: center;
-        color: var.$colorWhite;
-        background-color: rgba(var.$colorMain, 0.15);
+        color: var(--wp--preset--color--mono-white);
+        background-color: rgb(from var(--wp--preset--color--primary-1) r g b / 0.15);
     }
     &__title {
         margin-bottom: 40px;
@@ -99,11 +99,11 @@
         }
     }
     &__linksContainer {
-        background-color: var.$colorWhite;
+        background-color: var(--wp--preset--color--mono-white);
         display: flex;
         padding: 10px;
         border-radius: 5px;
-        box-shadow: 0 0 30px 0 rgba(var.$colorBlack, 0.5);
+        box-shadow: 0 0 30px 0 rgb(from var(--wp--preset--color--mono-black) r g b / 0.5);
         @include mx.S {
             flex-direction: column;
             width: 90%;
@@ -115,13 +115,13 @@
     }
     &__linksItem {
         @include mx.S {
-            border-bottom: 1px solid var.$colorMono1;
+            border-bottom: 1px solid var(--wp--preset--color--secondary1);
         }
         @include mx.M {
-            border-right: 1px solid var.$colorMono1;
+            border-right: 1px solid var(--wp--preset--color--secondary1);
         }
         @include mx.L {
-            border-right: 1px solid var.$colorMono1;
+            border-right: 1px solid var(--wp--preset--color--secondary1);
         }
         &:last-child {
             border-right: none !important;
@@ -142,7 +142,7 @@
             padding: 20px 30px;
         }
         &:hover {
-            background-color: var.$colorMono1;
+            background-color: var(--wp--preset--color--mono-1);
         }
     }
     &__linksText {
@@ -150,6 +150,6 @@
     }
     &__linksIcon {
         font-size: 2em;
-        color: var.$colorMain;
+        color: var(--wp--preset--color--primary-1);
     }
 }

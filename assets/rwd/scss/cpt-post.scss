@@ -8,7 +8,7 @@
     width: 100%;
     padding-bottom: 60px;
     margin-bottom: 60px;
-    border-bottom: 1px solid var.$colorMono3;
+    border-bottom: 1px solid var(--wp--preset--color--mono-3);
     &__link {
         display: flex;
         flex-wrap: wrap;
@@ -31,7 +31,7 @@
         &--none {
             width: 100%;
             height: 180px;
-            background-color: var.$colorMono1;
+            background-color: var(--wp--preset--color--secondary1);
         }
     }
     &__content {
@@ -49,7 +49,7 @@
     }
     &__categories {
         margin-bottom: 20px;
-        color: var.$colorMain;
+        color: var(--wp--preset--color--primary-1);
         font-weight: 700;
         text-transform: uppercase;
     }
@@ -105,35 +105,14 @@
             &__icon {
                 width: 25px;
                 height: 25px;
-                fill: var.$colorMono3;
+                fill: var(--wp--preset--color--mono-3);
             }
         }
     }
     &__text {
         padding-bottom: 60px;
         margin-bottom: 60px;
-        border-bottom: 1px solid var.$colorMono2;
-        h2 {
-            @extend .h3;
-            margin-top: 1.5em;
-        }
-        h3 {
-            @extend .h4;
-            margin-top: 1.5em;
-        }
-        h4 {
-            @extend .h4;
-            margin-top: 1.5em;
-        }
-        ul {
-            @extend .listDisc;
-        }
-        ol {
-            @extend .listNumeric;
-        }
-        .wp-block-image {
-            margin-bottom: 1em;
-        }
+        border-bottom: 1px solid var(--wp--preset--color--mono-2);
     }
 
     // Share
@@ -145,11 +124,11 @@
         align-items: center;
         padding-bottom: 60px;
         margin-bottom: 60px;
-        border-bottom: 1px solid var.$colorMono2;
+        border-bottom: 1px solid var(--wp--preset--color--mono-2);
     }
     &__shareText {
         font-weight: 700;
-        color: var.$colorMain;
+        color: var(--wp--preset--color--primary-1);
         margin-right: 10px;
     }
     &__shareItems {
@@ -160,14 +139,14 @@
         height: 45px;
         line-height: 45px;
         border-radius: 100px;
-        box-shadow: 0 0 10px 0 rgba(var.$colorBlack, 0.2);
+        box-shadow: 0 0 10px 0 rgb(from var(--wp--preset--color--mono-black) r g b / 0.2);
         margin-left: 10px;
         text-align: center;
     }
     &__shareIcon {
         width: 20px;
         height: 20px;
-        fill: var.$colorMono3;
+        fill: var(--wp--preset--color--mono-3);
 
     }
 
@@ -182,7 +161,7 @@
     &__similarTitle {
         padding-bottom: 30px !important;
         margin-bottom: 60px !important;
-        border-bottom: 1px solid var.$colorMono2;
+        border-bottom: 1px solid var(--wp--preset--color--mono-2);
     }
     &__similarPosts {
         margin-bottom: 40px;
@@ -243,7 +222,7 @@
     &__sidebarTitle {
         margin-bottom: 2em;
         padding-bottom: 0.5em;
-        border-bottom: 1px solid var.$colorMono3;
+        border-bottom: 1px solid var(--wp--preset--color--mono-3);
         font-size: 1.2em;
         font-weight: 700;
     }
@@ -252,7 +231,7 @@
         flex-wrap: nowrap;
         justify-content: space-between;
         font-weight: 700;
-        color: var.$colorMono3;
+        color: var(--wp--preset--color--mono-3);
         margin-bottom: 1em;
     }
 }

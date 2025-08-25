@@ -24,27 +24,27 @@
             display: none !important;
         }
         &--error {
-            color: var.$colorError;
+            color: var(--wp--preset--color--error);
             .message__icon {
-                fill: var.$colorError;
+                fill: var(--wp--preset--color--error);
             }
         }
         &--warning {
-            color: var.$colorWarning;
+            color: var(--wp--preset--color--warning);
             .message__icon {
-                fill: var.$colorWarning;
+                fill: var(--wp--preset--color--warning);
             }
         }
         &--info {
-            color: var.$colorInfo;
+            color: var(--wp--preset--color--info);
             .message__icon {
-                fill: var.$colorInfo;
+                fill: var(--wp--preset--color--info);
             }
         }
         &--success {
-            color: var.$colorSuccess;
+            color: var(--wp--preset--color--success);
             .message__icon {
-                fill: var.$colorSuccess;
+                fill: var(--wp--preset--color--success);
             }
         }
     }

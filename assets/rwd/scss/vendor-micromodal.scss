@@ -13,14 +13,14 @@
         right: 0;
         bottom: 0;
         z-index: 999;
-        background: rgba(0,0,0,0.6);
+        background: rgb(from var(--wp--preset--color--mono-black) r g b / 0.6);
         display: flex;
         justify-content: center;
         align-items: center;
         backdrop-filter: blur(10px);
     }
     &__content {
-        background-color: var.$colorWhite;
+        background-color: var(--wp--preset--color--mono-white);
         padding: 30px;
         max-width: 700px;
         max-height: 100vh;

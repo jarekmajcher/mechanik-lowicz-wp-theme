@@ -1,47 +1,6 @@
-$colorBlack: #000000;
-$colorWhite: #FFFFFF;
-
-$colorMono1: #F4F4F4;
-$colorMono2: #D2D2D2;
-$colorMono3: #9E9E9E;
-
-$colorMain: #a61235;
-$colorSecond: #000000;
-
-$colorError: #f80505;
-$colorWarning: #e3ac3e;
-$colorSuccess: #0F9722;
-$colorInfo: #1E22AA;
-
-$fontFamily: 'Montserrat', serif;
-$fontSize: 15px;
-
-// Layout vars
-$column-gap-map: (
-        S: 16px,
-        M: 16px,
-        L: 30px,
-        XL: 30px
-);
-
-$row-gap-map: (
-        S: 24px,
-        M: 24px,
-        L: 32px,
-        XL: 32px
-);
-
 $breakpoint-map: (
         S: 'screen and (max-width: 766px)',
         M: 'screen and (min-width: 767px) and (max-width: 1279px)',
         L: 'screen and (min-width: 1280px)',
         XL: 'screen and (min-width: 1400px)'
 );
-
-$container: 1208px;
-$container--ultranarrow: 604px;
-$container--narrow: 1000px;
-$container--wide: 94vw;
-
-$column-gap: 64px;
-$row-gap: 64px;

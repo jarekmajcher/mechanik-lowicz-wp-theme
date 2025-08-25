@@ -1,0 +1,105 @@
+{
+    "version": 2,
+    "settings": {
+        "layout": {
+            "contentSize": "1208px",
+            "wideSize": "94vw"
+        },
+        "typography": {
+            "fluid": false,
+            "fontSizes": [
+                {
+                    "name": "Normal",
+                    "slug": "normal",
+                    "size": "16px"
+                },
+                {
+                    "name": "Small",
+                    "slug": "small",
+                    "size": "0.8em"
+                },
+                {
+                    "name": "Medium",
+                    "slug": "medium",
+                    "size": "1.2em"
+                },
+                {
+                    "name": "Large",
+                    "slug": "large",
+                    "size": "1.8em"
+                },
+                {
+                    "name": "Extra Large",
+                    "slug": "x-large",
+                    "size": "2.4em"
+                }
+            ],
+            "fontFamilies": [
+                {
+                    "name": "Montserrat",
+                    "slug": "montserrat",
+                    "fontFamily": "'Montserrat', serif"
+                }
+            ]
+        },
+        "color": {
+            "palette": [
+                {
+                    "color": "#a61235",
+                    "name": "Główny 1",
+                    "slug": "primary-1"
+                },
+                {
+                    "color": "#111111",
+                    "name": "Dopełniający 1",
+                    "slug": "secondary-1"
+                },
+                {
+                    "color": "#F4F4F4",
+                    "name": "Mono 1",
+                    "slug": "mono-1"
+                },
+                {
+                    "color": "#D2D2D2",
+                    "name": "Mono 2",
+                    "slug": "mono-2"
+                },
+                {
+                    "color": "#9E9E9E",
+                    "name": "Mono 3",
+                    "slug": "mono-3"
+                },
+                {
+                    "color": "#333333",
+                    "name": "Czarny",
+                    "slug": "mono-black"
+                },
+                {
+                    "color": "#FFFFFF",
+                    "name": "Biały",
+                    "slug": "mono-white"
+                },
+                {
+                    "color": "#f80505",
+                    "name": "Błąd",
+                    "slug": "error"
+                },
+                {
+                    "color": "#e3ac3e",
+                    "name": "Ostrzeżenie",
+                    "slug": "warning"
+                },
+                {
+                    "color": "#0F9722",
+                    "name": "Sukces",
+                    "slug": "success"
+                },
+                {
+                    "color": "#1E22AA",
+                    "name": "Informacja",
+                    "slug": "info"
+                }
+            ]
+        }
+    }
+}

@@ -5,8 +5,14 @@
     "author": "jaroslawmajcher <jarek@majcher.me>",
     "license": "MIT",
     "devDependencies": {
-        "@symfony/webpack-encore": "^5.0",
+        "@babel/core": "^7.28.3",
+        "@babel/preset-env": "^7.28.3",
+        "@babel/preset-react": "^7.27.1",
+        "@symfony/webpack-encore": "^5.1.0",
+        "@wordpress/babel-preset-default": "^8.29.0",
+        "@wordpress/data": "^10.29.0",
         "autoprefixer": "^10.4",
+        "babel-loader": "^10.0.0",
         "fast-glob": "^3.3.3",
         "file-loader": "^6.2",
         "postcss": "^8.5",
@@ -18,6 +24,11 @@
     },
     "dependencies": {
         "@googlemaps/markerclusterer": "^2.5.3",
+        "@wordpress/block-editor": "^15.2.0",
+        "@wordpress/blocks": "^15.2.0",
+        "@wordpress/components": "^30.2.0",
+        "@wordpress/element": "^6.29.0",
+        "@wordpress/i18n": "^6.2.0",
         "bootstrap-icons": "^1.13.1",
         "glightbox": "^3.3",
         "imagesloaded": "^5.0",
@@ -25,7 +36,8 @@
         "mburger-webcomponent": "^3.1",
         "micromodal": "^0.4",
         "mmenu-js": "^9.3",
-        "swiper": "^11.2"
+        "swiper": "^11.2",
+        "tabbyjs": "^12.0.3"
     },
     "scripts": {
         "dev": "encore dev",

@@ -12,8 +12,8 @@
     line-height: 1.6em;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
     transition: all 1s ease 0s;
-    background-color: var.$colorWhite;
-    color: var.$colorBlack;
+    background-color: var(--wp--preset--color--mono-white);
+    color: var(--wp--preset--color--mono-black);
     @include mx.S {
         position: relative;
     }
@@ -69,11 +69,11 @@
         cursor: pointer;
         font-size: 0.8em;
         &--accept {
-            background-color: var.$colorMain;
-            color: var.$colorWhite;
+            background-color: var(--wp--preset--color--primary-1);
+            color: var(--wp--preset--color--mono-white);
         }
         &--reject {
-            color: var.$colorBlack;
+            color: var(--wp--preset--color--mono-black);
         }
     }
 }

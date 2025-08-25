@@ -10,7 +10,7 @@
         label {
             display: block;
             cursor: pointer;
-            color: var.$colorBlack;
+            color: var(--wp--preset--color--mono-black);
             width: 100%;
         }
 
@@ -24,11 +24,11 @@
         .wpcf7-form-control.wpcf7-textarea {
             display: inline-block;
             width: 100%;
-            color: var.$colorBlack;
-            background-color: var.$colorWhite;
-            border: 0.1em solid var.$colorSecond;
+            color: var(--wp--preset--color--mono-black);
+            background-color: var(--wp--preset--color--mono-white);
+            border: 0.1em solid var(--wp--preset--color--secondary-1);
             padding: 12px 15px;
-            font-size: var.$fontSize;
+            font-size: var(--wp--preset--font-size--normal);
             appearance: none;
             border-radius: 12px;
             &:focus {
@@ -39,7 +39,7 @@
         .wpcf7-not-valid-tip {
             margin-top: 0.5em;
             font-size: 0.8em;
-            color: var.$colorError;
+            color: var(--wp--preset--color--error);
         }
 
         .wpcf7-form-control.wpcf7-acceptance {
@@ -65,7 +65,7 @@
         }
 
         input[type="checkbox"] {
-            color: var.$colorSecond;
+            color: var(--wp--preset--color--secondary-1);
             cursor: pointer;
             appearance: none;
             margin: 0;
@@ -95,9 +95,9 @@
             display: inline-block;
             margin-top: 1em;
             padding: 0.8em 4em;
-            border: 0.1em solid var.$colorSecond;
-            color: var.$colorWhite;
-            background-color: var.$colorSecond;
+            border: 0.1em solid var(--wp--preset--color--secondary-1);
+            color: var(--wp--preset--color--mono-white);
+            background-color: var(--wp--preset--color--secondary-1);
             text-decoration: none;
             text-align: center;
             will-change: color, background-color;
@@ -105,10 +105,10 @@
             font-weight: 500;
             cursor: pointer;
             border-radius: 12px;
-            font-size: var.$fontSize;
+            font-size: var(--wp--preset--font-size--normal);
             &:hover:not(:disabled) {
-                color: var.$colorSecond;
-                background-color: var.$colorWhite;
+                color: var(--wp--preset--color--secondary-1);
+                background-color: var(--wp--preset--color--mono-white);
             }
             &:disabled {
                 cursor: not-allowed !important;
@@ -127,17 +127,17 @@
 
         &.sent {
             .wpcf7-response-output {
-                background-color: var.$colorWhite;
-                border-color: var.$colorSuccess;
-                color: var.$colorSuccess;
+                background-color: var(--wp--preset--color--mono-white);
+                border-color: var(--wp--preset--color--success);
+                color: var(--wp--preset--color--success);
             }
         }
 
         &.invalid {
             .wpcf7-response-output {
-                background-color: var.$colorWhite;
-                border-color: var.$colorError;
-                color: var.$colorError;
+                background-color: var(--wp--preset--color--mono-white);
+                border-color: var(--wp--preset--color--error);
+                color: var(--wp--preset--color--error);
             }
         }
 

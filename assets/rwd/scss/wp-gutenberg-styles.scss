@@ -11,12 +11,12 @@
 .wp-block-columns.columnsSpecial1 {
     padding: var(--column-gap) ;
     border-radius: 15px;
-    row-gap: calc(var(--row-gap) * 2) !important;
+    row-gap: var(--row-gap) !important;
     @include mx.S {
     }
     @include mx.M {
     }
     @include mx.L {
-        padding: calc(var(--column-gap) * 2);
+        padding: var(--column-gap);
     }
 }

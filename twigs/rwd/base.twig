@@ -5,25 +5,12 @@
 {% include '@rwd/partials/header.twig' %}
 
 <div class="wrapper">
-
-    {#
-    <header class="header" id="header-top">
-        <div class="header__container container">
-            <div class="header__logo headerLogo">
-                <a class="headerLogo__link" href="{{ site.url }}">
-                    <img class="headerLogo__img" src="{{ asset('images/logo/mechanik-lowicz-color.svg') }}" alt="{{ site.name }}" />
-                </a>
-            </div>
-        </div>
-    </header>
-    #}
-
     <div class="pageContent">
         {% block body %}{% endblock %}
     </div>
 
-    <footer class="footer">
-        <div class="footer__container container container--wide">
+    <footer class="footer is-layout-constrained">
+        <div class="footer__container">
             <div class="footer__info1">
                 {{ sidebar.footer_info_1|shortcodes }}
             </div>

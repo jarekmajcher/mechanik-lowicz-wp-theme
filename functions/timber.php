@@ -58,6 +58,11 @@ class Theme_Timber {
             get_stylesheet_directory() . '/public/admin'
         ];
 
+        $paths['blocks'] = [
+            get_stylesheet_directory() . '/twigs/blocks',
+            get_stylesheet_directory() . '/public/blocks'
+        ];
+
         return $paths;
     }
 }

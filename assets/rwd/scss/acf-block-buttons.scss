@@ -59,7 +59,7 @@
     }
     &__button {
         display: inline-block;
-        color: var.$colorBlack;
+        color: var(--wp--preset--color--mono-black);
         cursor: pointer;
         i {
             position: relative;
@@ -76,10 +76,10 @@
         }
         &--simple {
             &.gButtons__button--main {
-                color: var.$colorMain;
+                color: var(--wp--preset--color--primary-1);
             }
             &.gButtons__button--second {
-                color: var.$colorMain;
+                color: var(--wp--preset--color--primary-1);
             }
         }
 
@@ -89,24 +89,24 @@
             border-style: solid;
             border-radius: 5px;
             &.gButtons__button--main {
-                border-color: var.$colorMain;
-                background-color: var.$colorMain;
-                color: var.$colorWhite;
+                border-color: var(--wp--preset--color--primary-1);
+                background-color: var(--wp--preset--color--primary-1);
+                color: var(--wp--preset--color--mono-white);
             }
             &.gButtons__button--second {
-                border-color: var.$colorSecond;
-                background-color: var.$colorSecond;
-                color: var.$colorWhite;
+                border-color: var(--wp--preset--color--secondary1);
+                background-color: var(--wp--preset--color--secondary1);
+                color: var(--wp--preset--color--mono-white);
             }
             &.gButtons__button--white {
-                border-color: var.$colorWhite;
-                background-color: var.$colorWhite;
-                color: var.$colorBlack;
+                border-color: var(--wp--preset--color--mono-white);
+                background-color: var(--wp--preset--color--mono-white);
+                color: var(--wp--preset--color--mono-black);
             }
             &.gButtons__button--black {
-                border-color: var.$colorBlack;
-                background-color: var.$colorBlack;
-                color: var.$colorWhite;
+                border-color: var(--wp--preset--color--mono-black);
+                background-color: var(--wp--preset--color--mono-black);
+                color: var(--wp--preset--color--mono-white);
             }
         }
 
@@ -116,24 +116,24 @@
             border-style: solid;
             border-radius: 5px;
             &.gButtons__button--main {
-                border-color: var.$colorMain;
+                border-color: var(--wp--preset--color--primary-1);
                 background-color: transparent;
-                color: var.$colorMain;
+                color: var(--wp--preset--color--primary-1);
             }
             &.gButtons__button--second {
-                border-color: var.$colorSecond;
+                border-color: var(--wp--preset--color--secondary1);
                 background-color: transparent;
-                color: var.$colorSecond;
+                color: var(--wp--preset--color--secondary1);
             }
             &.gButtons__button--white {
-                border-color: var.$colorWhite;
+                border-color: var(--wp--preset--color--mono-white);
                 background-color: transparent;
-                color: var.$colorWhite;
+                color: var(--wp--preset--color--mono-white);
             }
             &.gButtons__button--black {
-                border-color: var.$colorBlack;
+                border-color: var(--wp--preset--color--mono-black);
                 background-color: transparent;
-                color: var.$colorBlack;
+                color: var(--wp--preset--color--mono-black);
             }
         }
     }

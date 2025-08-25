@@ -1,0 +1,17 @@
+{% set id = random() %}
+
+<div class="tabs">
+    <ul class="tabs__items">
+        {% for tab in block.parsed_block.innerBlocks %}
+            <button class="tabs__button {% if loop.index == 1 %}tabs__button--active{% endif %}" id="tab-{{ id }}-{{ loop.index }}">{{ tab.attrs.title }}</button>
+        {% endfor %}
+    </ul>
+    <div class="tabs__panels">
+        {% for tab in block.parsed_block.innerBlocks %}
+            <div class="tabs__panel {% if loop.index == 1 %}tabs__panel--active{% endif %}" aria-labelledby="tab-{{ id }}-{{ loop.index }}">
+                {{ fn('render_block', tab) }}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+

@@ -1,0 +1,23 @@
+.theme-block-tabs {
+}
+
+.theme-block-tabs-element {
+    overflow: hidden;
+    margin-bottom: 1em;
+    &__title {
+        position: relative;
+        width: clamp(300px, 35vw, 100%);
+        padding: 1rem;
+        border-width: 1px;
+        border-color: #8c8f94;
+        border-style: solid solid none solid;
+        border-radius: 4px 4px 0 0;
+        background-color: #f0f0f0;
+    }
+    &__content {
+        padding: 1rem;
+        border-width: 1px;
+        border-color: #8c8f94;
+        border-style: solid solid solid solid;
+    }
+}

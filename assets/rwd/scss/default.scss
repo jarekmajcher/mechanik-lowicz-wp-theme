@@ -1,0 +1,37 @@
+@use 'mx';
+@use 'var';
+@use 'sass:math';
+
+* {
+    scroll-padding-top: 160px;
+}
+
+strong {
+    font-weight: 700;
+}
+
+sup,
+sub {
+    font-size: 0.8em;
+}
+
+small {
+    font-size: 0.8em;
+}
+
+::selection {
+    background-color: var(--wp--preset--color--mono-black);
+    color: var(--wp--preset--color--mono-white);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin-bottom: 1em;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

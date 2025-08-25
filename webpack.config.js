@@ -6,5 +6,6 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 
 const rwd = require('./assets/rwd/webpack.config');
 const admin = require('./assets/admin/webpack.config');
+const blocks = require('./assets/blocks/webpack.config');
 
-module.exports = [rwd, admin];
+module.exports = [rwd, admin, blocks];

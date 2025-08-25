@@ -10,9 +10,7 @@ class Theme_Wp_Menu {
 
     public function register_menu() {
         register_nav_menus([
-            'header_navigation' => 'Nawigacja w nagłówku',
-            'footer_navigation' => 'Nawigacja w stopce',
-            'mobile_navigation' => 'Nawigacja mobilna',
+            'footer_navigation' => 'Nawigacja w stopce'
         ]);
     }
 }

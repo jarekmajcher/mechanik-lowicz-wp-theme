@@ -1,0 +1,41 @@
+@use '../../../rwd/scss/mx';
+@use '../../../rwd/scss/var';
+@use 'sass:math';
+
+.tabs {
+    &__items {
+        display: flex;
+        row-gap: 1rem;
+        column-gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+    &__button {
+        padding: 0.4em 1.2em;
+        border-radius: 10px;
+        border: 1px solid var(--wp--preset--color--mono-black);
+        background-color: transparent;
+        cursor: pointer;
+        transition: color 0.3s, background-color 0.3s;
+        will-change: color, background-color;
+        @include mx.S {
+            font-size: 0.8em;
+        }
+        @include mx.M {
+        }
+        @include mx.L {
+        }
+        &--active {
+            background-color: var(--wp--preset--color--mono-black);
+            color: var(--wp--preset--color--mono-white);
+        }
+    }
+    &__panels {
+    }
+    &__panel {
+        display: none;
+        &--active {
+            display: block;
+        }
+    }
+}
